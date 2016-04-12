@@ -1,0 +1,206 @@
+#canvas01 {
+	/*border-style: solid;
+	border-width: thin;
+	border-color: hsla(0,0%,70%,1.0);
+	display: block;
+	position: inherit;
+	margin: 0 auto;
+	z-index: 1;*/
+}
+
+.ui{
+	/* z-index: 2;
+	background-color: hsla(0,100%,100%,1);
+	border-color: hsla(0,100%,0%,1);
+	border-top: solid;
+	border-width: 5px;
+	padding: 20px;
+	position: fixed;
+	bottom: 0px; */
+}
+
+body {
+    /* overflow:hidden; */
+}
+
+.canvascontainer-border {
+	border-color: hsla(0,100%,50%,1);
+	border-width: thin;
+}
+
+.canvascontainer-border:hover {
+	border-color: hsla(0,100%,50%,1);
+	
+}
+
+.circleDiv {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	border-radius: 10%;
+	position: relative;
+	border-style: solid;
+	border-width: thin;
+	border-color: hsla(0,100%,0%,0.0);
+	margin-bottom: 25px;
+}
+
+.circleDiv:before{
+    content: "";
+    display: block;
+    padding-top: 100%;  /* initial ratio of 1:1*/
+}
+
+.circleDiv:hover {
+	border-color: hsla(0,100%,0%,0.3);
+}
+
+.circleDiv:active {
+	border-color: hsla(0,100%,0%,0.8);
+    border-width: 2px;
+}
+
+.circleDiv img {
+	z-index: -1;
+}
+
+.slider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Bootstrap Header & Footer Styles */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #ffffff; 
+    border: 1px solid transparent;
+    border-color: #e7e7e7;
+}
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.text-muted {
+    color: #333333;
+}
+
+/* Bootstrap custom navbar */
+.navbar-tellate {
+  background-color: #ffffff;
+  border-color: #e7e7e7;
+}
+.navbar-tellate .navbar-brand {
+  color: #333333;
+}
+.navbar-tellate .navbar-brand:hover,
+.navbar-tellate .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar-tellate .navbar-text {
+  color: #333333;
+}
+.navbar-tellate .navbar-nav > li > a {
+  color: #333333;
+}
+.navbar-tellate .navbar-nav > li > a:hover,
+.navbar-tellate .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+.navbar-tellate .navbar-nav > .active > a,
+.navbar-tellate .navbar-nav > .active > a:hover,
+.navbar-tellate .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.navbar-tellate .navbar-nav > .disabled > a,
+.navbar-tellate .navbar-nav > .disabled > a:hover,
+.navbar-tellate .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-tellate .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-tellate .navbar-toggle:hover,
+.navbar-tellate .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-tellate .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-tellate .navbar-collapse,
+.navbar-tellate .navbar-form {
+  border-color: #e7e7e7;
+}
+.navbar-tellate .navbar-nav > .open > a,
+.navbar-tellate .navbar-nav > .open > a:hover,
+.navbar-tellate .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-tellate .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-tellate .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-tellate .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .navbar-tellate .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-tellate .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-tellate .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-tellate .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-tellate .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-tellate .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-tellate .navbar-link {
+  color: #777;
+}
+.navbar-tellate .navbar-link:hover {
+  color: #333;
+}
+.navbar-tellate .btn-link {
+  color: #777;
+}
+.navbar-tellate .btn-link:hover,
+.navbar-tellate .btn-link:focus {
+  color: #333;
+}
+.navbar-tellate .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-tellate .btn-link:hover,
+.navbar-tellate .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-tellate .btn-link:focus {
+  color: #ccc;
+}

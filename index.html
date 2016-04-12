@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>gridit</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/jquery-ui.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+      
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons 
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">-->
+
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery-ui.js" type="text/javascript"></script>
+	<script src="js/paper.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/circles.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+	  <!-- Fixed navbar -->
+	    <nav class="navbar navbar-tellate navbar-static-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">gridit</a>
+	        </div>
+	        <!-- Future Navbar
+            <div id="navbar" class="collapse navbar-collapse navbar-right">
+	          <ul class="nav navbar-nav">
+                <li><a href="#">Cart</a></li>
+	            <li><a href="#">Contact</a></li>
+	            <li><button class="btn btn-primary navbar-btn">LOGIN</button></li>
+	          </ul>
+            </div>--><!--/.nav-collapse -->
+	      </div>
+	    </nav>
+   	<!-- Main Contents and Paper Canvas -->
+    <div class="container">
+        
+		<div class="row">
+            
+            <div class="col-md-1"></div>
+            
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <h4>INTERFACE CONTROLS</h4>
+                    </div>
+                    <div class="col-xs-3 col-md-3">
+                        <div><img src="img/icon_clr.svg" id="clr" class="circleDiv"></div>
+                    </div>
+                    <div class="col-xs-3 col-md-3">
+                        <div><img src="img/icon_inv.svg" id="inv" class="circleDiv"></div>
+                    </div>
+                    <div class="col-xs-3 col-md-3">
+                        <div><img src="img/icon_rnd.svg" id="rnd" class="circleDiv"></div>
+                    </div>
+                    <div class="col-xs-3 col-md-3">
+                        <div><img src="img/icon_bnd.svg" id="bdr" class="circleDiv"></div>
+                    </div>
+                    <div class="col-xs-3 col-md-3 col-md-offset-3">
+                        <div><img src="img/placeholder.svg" id="poster" class="circleDiv"></div>
+                    </div>
+                    <div class="col-xs-3 col-md-3">
+                        <div><img src="img/placeholder.svg" id="screen" class="circleDiv"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-12">
+                        <h4>GRID DENSITY</h4>
+                        <div class="slider" id="slider_count"></div>
+                    </div>
+                    <!--<div class="col-xs-12 col-md-12">
+                        <h4>CIRCLE RADIUS</h4>
+                        <div class="slider" id="slider_rad"></div>
+                    </div>-->  
+                    <div class="col-xs-12 col-md-12">
+                        <h4>COLOUR</h4>
+                         <div class="slider" id="slider_hue"></div>
+                         <div class="slider" id="slider_sat"></div>
+                    </div>
+                   <!-- <div class="col-xs-12 col-md-12">
+                        <h4>CODE</h4>
+                        <p id="patternCode"></p>
+                    </div>-->
+                    <div class="col-xs-12 col-md-12">
+                        <h4>PREVIEW + ORDER</h4>
+                    </div>
+                    <div class="col-xs-3 col-md-3">
+                        <div><img src="img/placeholder.svg" id="prev" class="circleDiv"></div>
+                    </div>
+                </div>
+            </div>
+
+			<div class="col-md-1"></div>
+
+			<div class="col-xs-12 col-md-6">
+				<div class="canvascontainer">
+					<canvas id="canvas01"></canvas>
+				</div>
+			</div>
+            
+		</div>
+        
+	</div>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright Marc Micuta 2016</p>
+      </div>
+    </footer>
+  </body>
+</html>
