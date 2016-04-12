@@ -274,10 +274,19 @@ function recordPattern(input) {
     //console.log(patternHex);
 }
 
-// Open Canvas preview in new tab
-function previewCanvas(input) {
-    var canvasPreview = input.toDataURL();
-    window.open(canvasPreview, "Grid Preview");
+// Save SVG Export of Canvas (credit to Mike Chambers)
+var downloadAsSVG = function (fileName) {
+
+   if(!fileName) {
+       fileName = "paperjs_example.svg"
+   }
+
+   var url = "data:image/svg+xml;utf8," + encodeURIComponent(paper.project.exportSVG({asString:true}));
+
+   var link = document.createElement("a");
+   link.download = fileName;
+   link.href = url;
+   link.click();
 }
 
 // Change to Poster Aspect Ratio
@@ -689,20 +698,8 @@ function circles() {
 		clearFill(circleGroup);
 	} );
 
-	$( "#rnd" ).click(function() {
-		randomFill(circleGroup);
-	} );
-    
-    $( "#poster" ).click(function() {
-        ratioPoster();
-    } );
-
-    $( "#screen" ).click(function() {
-        ratioScreen();
-    } );
-    
-    $( "#prev" ).click(function() {
-        previewCanvas(canvas);
+	$( "#dwn" ).click(function() {
+		downloadAsSVG();
 	} );
     
     $( "#slider_hue" ).on( "slidechange", function( event, ui ) {
