@@ -9,14 +9,17 @@ var fadeIncrement = 0.1;
 var lightnessLimit = 0.5;
 
 var hueInit = Math.floor(Math.random() * 360);
+var grayInit = 1;
 var paperHue = hueInit;
+//var paperSaturation = 0.8;
 var paperSaturation = 0.8;
 var radiusFactor = 0.86;
 var gw = 0;
 var patternCode;
 
-var ratioWidth;
+
 var ratioHeight;
+var ratioWidth;
 
 
 // 1.2 FUNCTIONS
@@ -118,7 +121,7 @@ $(function () {
 $(function () {
 	$( "#slider_sat" ).slider({
 		value: 0.8,
-		min: 0.5,
+		min: 0,
 		max: 0.8,
 		step: 0.02,
         slide: function (event, ui) {
@@ -166,7 +169,7 @@ function fadeFill(input) {
     }
 }
 
-// Change opacity of object based on its colour
+// Scale border stroke
 function scaleStroke(input) {
     input.strokeWidth = 1.5;
     if (input.borderState === 1) {
@@ -174,7 +177,7 @@ function scaleStroke(input) {
     }
 }
 
-// Change opacity of object based on its colour
+// UnScale border stroke
 function unScaleStroke(input) {
     input.strokeWidth = 0.5;
     if (input.borderState === 1) {
@@ -217,11 +220,11 @@ function switchStroke(input) {
 function randomFill(input) {
     for (var i = 0; i < input.children.length; i++) {
         if (input.children[i].state === 0) {
-            if (Math.random()<0.05) {
+            if (Math.random()<0.75) {
                 switchState(input.children[i]);
             }
         } else {
-            if (Math.random()>0.05) {
+            if (Math.random()>0.75) {
                 switchState(input.children[i]);
             }
         }
@@ -244,6 +247,16 @@ function changeSat(input) {
         }
     }
 }
+
+// Use checkbox to swap between colour and grayscale
+function grayGrid(input) {
+    for (var i = 0; i < input.children.length; i++) {
+        if (input.children[i].state != 1) {
+            input.children[i].fillColor.lightness = paperSaturation;
+        }
+    }
+}
+
 
 // Use slider to change radius
 function changeRadius(input) {
@@ -289,12 +302,14 @@ var downloadAsSVG = function (fileName) {
    link.click();
 }
 
+// Set grid parameters from aspect ratio
+
 // Change to Poster Aspect Ratio
 function ratioPoster() {
     //ratioWidth = $(".canvascontainer").innerWidth();
     //ratioHeight = ratioWidth * 1.618;
     
-    ratioHeight = $(document).innerHeight() - 200;
+    ratioHeight = $(document).innerHeight() - 300;
     ratioWidth = ratioHeight / 1.618;
     
     //console.log(ratioWidth, ratioHeight);
@@ -314,9 +329,6 @@ function ratioScreen() {
     //console.log(ratioWidth, ratioHeight);
     //circles();
 }
-
-// Set grid parameters from aspect ratio
-
 
 
 // 2.0 PAPER.JS
@@ -619,7 +631,7 @@ function circles() {
 		circle.address_x = centroidsArray[i].address_x;
 		circle.address_y = centroidsArray[i].address_y;
 		circle.fadeToggle = 0;
-		circle.fillColor = {hue: paperHue, saturation: 0.5, lightness: paperSaturation};
+		circle.fillColor = {hue: paperHue, saturation: 0.5, lightness: paperSaturation, gray: grayInit};
 		circle.strokeColor = {hue: 0, saturation: 0, lightness: 0};
 		circle.strokeWidth = 0.5;
         circle.borderState = 0;
@@ -696,6 +708,10 @@ function circles() {
 
 	$( "#clr" ).click(function() {
 		clearFill(circleGroup);
+	} );
+    
+    $( "#rnd" ).click(function() {
+		randomFill(circleGroup);
 	} );
 
 	$( "#dwn" ).click(function() {
